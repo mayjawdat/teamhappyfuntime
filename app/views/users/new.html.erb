@@ -1,3 +1,7 @@
+<% if @errors %>
+  <%= render 'shared/errors' %>
+<% end %>
+
 <%= form_for @user, html: {class: 'registration'} do |f| %>
 
   <p><%= label_tag(:username, "Username") %>
