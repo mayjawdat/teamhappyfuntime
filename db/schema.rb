@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20170420182456) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "start_time",          null: false
+    t.datetime "end_time",            null: false
     t.integer  "student_id"
     t.integer  "mentor_id"
     t.text     "feedback_on_mentor"
