@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170420182456) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["mentor_id"], name: "index_appointments_on_mentor_id", using: :btree
-    t.index ["student_id"], name: "index_appointments_on_student_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
