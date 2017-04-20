@@ -5,6 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    p "* " * 60
+    p params
+    p "* " * 60
+    p user_params
+    p "* " * 60
+
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id

@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) {User.new}
+
+  it 'can create a user from params' do
+    params = {username: "someone", full_name: "Some One",
+              password: "moop", is_mentor: true}
+    expect(User.new(params).save).to be(true)
+  end
 end

@@ -19,10 +19,12 @@
   <p><%= label_tag(:email, "Email") %>
   <%= f.text_field :email %></p>
 
-  <%= radio_button_tag(:is_mentor, true) %>
-  <%= label_tag(:is_mentor_true, "Mentor") %>
-  <%= radio_button_tag(:is_mentor, false) %>
-  <%= label_tag(:is_mentor_false, "Student") %>
+  <%= f.check_box(:is_mentor) %>
+  <%= label_tag(:is_mentor, "Check if you are a mentor") %>
+
+
+  <%=  %>
+
 
   <p><%= f.submit %></p>
 
