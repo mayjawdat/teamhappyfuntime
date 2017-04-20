@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420180648) do
+ActiveRecord::Schema.define(version: 20170420182456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "student_id"
+    t.integer  "mentor_id"
+    t.text     "feedback_on_mentor"
+    t.text     "feedback_on_student"
+    t.integer  "rating_on_mentor"
+    t.integer  "rating_on_student"
+    t.boolean  "cancelled"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["mentor_id"], name: "index_appointments_on_mentor_id", using: :btree
+    t.index ["student_id"], name: "index_appointments_on_student_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",                        null: false
