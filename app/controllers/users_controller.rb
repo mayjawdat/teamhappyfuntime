@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       if @user.is_mentor
-        redirect_to '/users/:id/edit'
+        redirect_to "/users/#{@user.id}/edit"
       else
         redirect_to '/'
       end
@@ -19,9 +19,16 @@ class UsersController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+    @skills = Skill.all
+    @user = User.find(session[:user_id])
+  end
 
+  def update
+    params[:mentor_skills].each do |skill_id|
+
+    end
+  end
 
   private
 
