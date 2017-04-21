@@ -6,7 +6,31 @@
   <li>End time: <%= @appointment.end_time.getlocal %></li>
 </ul>
 
-<%= form_for @appointment do |f| %>
-  <% f.hidden_field :student_id, value: current_user.id %>
-  <%= f.submit "Sign up!" %>
+<% if @appointment.student_id == nil %>
+  <p>This appointment is still available.</p>
+  <% if !current_user.is_mentor %>
+    <%= form_for @appointment do |f| %>
+      <%= f.hidden_field :student_id, value: current_user.id %>
+      <%= f.submit "Sign up!" %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>This appointment has been booked by <%= User.find(@appointment.student_id).full_name %>.</p>
+  <% if @appointment.student_id == current_user.id %>
+    <%= form_for @appointment do |f| %>
+      <%= f.hidden_field :student_id, value: nil %>
+      <%= f.submit "Cancel Appointment" %>
+    <% end %>
+  <% end %>
 <% end %>
+
+
+<% if @appointment.mentor_id == current_user.id %>
+  <%= form_for @appointment do |f| %>
+    <%= f.hidden_field :cancelled, value: true %>
+    <%= f.submit "Cancel Appointment" %>
+  <% end %>
+<% end %>
+
+
+
