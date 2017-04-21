@@ -1,2 +1,16 @@
-<h1>Choose specialties</h1>
+<h1>Choose areas of expertise</h1>
 
+
+<form method="POST" action="/users/<%= @user.id %>">
+<input type="hidden" name="_method" value="PUT">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+<% @skills.each do |skill| %>
+  <ul>
+    <li><input type="checkbox" name="mentor_skills[<%= skill.id %>]" value="<%= skill.subject %>"><%= skill.subject %> </li>
+  </ul>
+<% end %>
+
+<input type="submit" value="Submit">
+
+</form>
