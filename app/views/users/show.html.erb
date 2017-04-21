@@ -1,0 +1,12 @@
+<p> Current user is <%= current_user.username %> </p>
+<p> Looking at profile for <%= @profile.username %></p>
+
+<%= render 'contact_info' %>
+
+<%= render 'skills' if @profile.is_mentor %>
+
+<%= render 'my_appointments' if @profile.id == current_user.id %>
+
+<%= render 'feedback_on_student' if (current_user.is_mentor && !@profile.is_mentor) %>
+
+<%= render 'feedback_on_mentor' if (@profile.is_mentor && !@current_user.is_mentor) %>

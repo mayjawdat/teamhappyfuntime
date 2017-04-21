@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       if @user.is_mentor
         redirect_to "/users/#{@user.id}/edit"
       else
-        redirect_to '/'
+        redirect_to "/users/#{@user.id}"
       end
     else
       @errors = @user.errors.full_messages
@@ -29,6 +29,10 @@ class UsersController < ApplicationController
       UsersSkill.create(skill_id: skill_id, user_id: current_user.id)
     end
     redirect_to "/users/#{current_user.id}"
+  end
+
+  def show
+    @profile = User.find(params[:id])
   end
 
   private
