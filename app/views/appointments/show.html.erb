@@ -19,7 +19,7 @@
   <% if @appointment.student_id == current_user.id %>
     <%= form_for @appointment do |f| %>
       <%= f.hidden_field :student_id, value: nil %>
-      <%= f.submit "Cancel Appointment" %>
+      <%= f.submit "Disappoint", :class => 'button' %>
     <% end %>
   <% end %>
 <% end %>
@@ -28,7 +28,7 @@
 <% if @appointment.mentor_id == current_user.id %>
   <%= form_for @appointment do |f| %>
     <%= f.hidden_field :cancelled, value: true %>
-    <%= f.submit "Cancel Appointment" %>
+    <%= f.submit "Disappoint", :class => 'button'%>
   <% end %>
 <% end %>
 
