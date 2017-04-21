@@ -7,7 +7,7 @@
 
 <% @skills.each do |skill| %>
   <ul>
-    <li><input type="checkbox" name="mentor_skills[<%= skill.id %>]"><%= skill.subject %> </li>
+    <li><input type="checkbox" name="mentor_skills[<%= skill.id %>]" value="<%= skill.subject %>"><%= skill.subject %> </li>
   </ul>
 <% end %>
 
