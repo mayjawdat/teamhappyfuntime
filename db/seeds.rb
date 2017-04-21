@@ -19,3 +19,5 @@ test_mentor = User.create!(username: 'test_mentor',
                         phone: '',
                         email: 'something@stuff.stuff',
                         is_mentor: true)
+
+Skill.create([{subject: 'Rails'}, {subject: 'Carpentry'}, {subject: 'Physics'}, {subject: 'Beekeeping'}])
