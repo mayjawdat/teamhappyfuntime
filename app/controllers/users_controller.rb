@@ -33,6 +33,11 @@ class UsersController < ApplicationController
 
   def show
     @profile = User.find(params[:id])
+    if current_user.is_mentor
+      @user_type_id = 'mentor_id'
+    else
+      @user_type_id = 'student_id'
+    end
   end
 
   private
