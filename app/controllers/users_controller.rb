@@ -5,21 +5,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "* " * 60
-    p params
-    p "* " * 60
-    p user_params
-    p "* " * 60
-
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/'
+      if @user.is_mentor
+        redirect_to '/users/:id/edit'
+      else
+        redirect_to '/'
+      end
     else
       @errors = @user.errors.full_messages
       render 'new'
     end
   end
+
+  # def edit
+  # end
+
 
   private
 
