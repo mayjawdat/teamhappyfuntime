@@ -6,9 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   </head>
 
-  <body>
+<body>
+ <div id = "top-layout">
     <h1><a href="/">Mentorz</a></h1>
     <nav>
       <% if logged_in? %>
@@ -26,6 +28,7 @@
         <%= link_to "Log in", login_path %>
       <% end %>
     </nav>
+  </div>
     <%= yield %>
   </body>
 </html>
