@@ -22,10 +22,18 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+  def update
+    @appointment = Appointment.find(params[:id])
+  end
+
 
   private
 
   def appointment_params
     params.require(:appointment).permit(:start_time, :end_time)
+  end
+
+  def update_student_id
+
   end
 end
