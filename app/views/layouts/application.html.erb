@@ -12,7 +12,7 @@
 <body>
  <iframe width="0" height="0" wmode="transparent" src="//www.youtube.com/embed/5_sfnQDr1-o?autoplay=1&loop=1&playlist=5_sfnQDr1-o" frameborder="0" allowfullscreen></iframe>
  <div id = "top-layout">
-    <h1><a href="/">Mentorz</a></h1>
+   <h1><a href="/"><%= image_tag "James2.jpeg" %> Mentorz <%= image_tag "James1.jpeg" %></a></h1>
     <nav>
       <% if logged_in? %>
         <a href="/users/<%= current_user.id %>">Welcome, <%= link_to current_user.full_name, current_user %>
