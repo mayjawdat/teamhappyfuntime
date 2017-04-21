@@ -6,19 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   </head>
 
   <body>
-    <h1><a href="/">Mentorz</a></h1>
-    <nav>
-      <% if logged_in? %>
-        <a href="/users/<%= current_user.id %>">Welcome, <%= link_to current_user.full_name, current_user %> | 
-          <%= link_to "Log out", logout_path, method: :delete %>
-      <% else %> 
-        <%= link_to 'Register', new_user_path %> | 
-        <%= link_to "Log in", login_path %>
-      <% end %>
-    </nav>
+    <div id = "top-layout">
+      <h1><a href="/">Mentorz</a></h1>
+      <nav>
+        <% if logged_in? %>
+          <a href="/users/<%= current_user.id %>">Welcome, <%= link_to current_user.full_name, current_user %> | 
+            <%= link_to "Log out", logout_path, method: :delete %>
+        <% else %> 
+          <%= link_to 'Register', new_user_path %> | 
+          <%= link_to "Log in", login_path %>
+        <% end %>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>
