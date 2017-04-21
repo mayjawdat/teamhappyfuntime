@@ -1,0 +1,7 @@
+<h2>Declare an Open Appointment Slot</h2>
+
+<%= form_for @appointment do |f| %>
+  Start time: <%= f.datetime_select :start_time%><br>
+  End time: <%= f.datetime_select :end_time%><br><br>
+  <%= f.submit %>
+<% end %>

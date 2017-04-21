@@ -1,0 +1,17 @@
+<h2>Log In</h2>
+
+<% if @errors %>
+  <%= render 'shared/errors' %>
+<% end %>
+
+<%= form_for(:session, url: login_path) do |f| %>
+
+  <p><%= label_tag(:username, "Username") %>
+  <%= f.text_field :username %></p>
+
+  <p><%= label_tag(:password, "Password") %>
+  <%= f.password_field :password %></p>
+
+  <p><%= f.submit "Log In" %></p>
+
+<% end %>

@@ -1,0 +1,12 @@
+<h2>Appointment Details</h2>
+
+<ul>
+  <li>Mentor name: <a href="/users/<%= @appointment.mentor.id %>"><%= @appointment.mentor.full_name %></a></li>
+  <li>Start time: <%= @appointment.start_time.getlocal %></li>
+  <li>End time: <%= @appointment.end_time.getlocal %></li>
+</ul>
+
+<%= form_for @appointment do |f| %>
+  <% f.hidden_field :student_id, value: current_user.id %>
+  <%= f.submit "Sign up!" %>
+<% end %>

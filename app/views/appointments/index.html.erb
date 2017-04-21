@@ -1,0 +1,20 @@
+<h2>Available Mentor Slots</h2>
+<table>
+  <% if @appointments.any? %>
+    <% @appointments.each do |a| %>
+      <tr>
+        <th>Mentor name:</th>
+         <td><a href="/users/<%= a.mentor.id %>"><%= a.mentor.full_name %></a>
+          <td rowspan=3><a href="/appointments/<%= a.id %>">View Details</a></td>
+      </tr>
+      <tr>
+        <th>Start Time:</th>
+         <td><%= a.start_time.getlocal %></td>
+      </tr>
+      <tr>
+        <th>End Time:</th>
+         <td><%= a.end_time.getlocal %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

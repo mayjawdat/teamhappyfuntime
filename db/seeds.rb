@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+test_student = User.create!(username: 'test_student',
+                        full_name: 'Test Student',
+                        password: 'moop',
+                        phone: '',
+                        email: 'anything@stuff.stuff',
+                        is_mentor: false)
+
+test_mentor = User.create!(username: 'test_mentor',
+                        full_name: 'Test Mentor',
+                        password: 'moop',
+                        phone: '',
+                        email: 'something@stuff.stuff',
+                        is_mentor: true)
+
+Skill.create([{subject: 'Rails'}, {subject: 'Carpentry'}, {subject: 'Physics'}, {subject: 'Beekeeping'}])
