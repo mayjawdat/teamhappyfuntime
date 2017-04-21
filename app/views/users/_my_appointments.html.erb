@@ -1,6 +1,6 @@
 <h2> List of my appointments </h2>
 
-<% schedule = Appointment.where(@user_type_id =>current_user.id) %>
+<% schedule = Appointment.where(student_id: current_user.id) %>
 <% if schedule != nil %>
   <ul class='appointments-list'>
     <% schedule.each do |appointment| %>

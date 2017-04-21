@@ -5,4 +5,8 @@ class Appointment < ApplicationRecord
   def display?
     !self.cancelled
   end
+
+  def completed?
+    self.end_time < DateTime.now
+  end
 end
