@@ -4,10 +4,10 @@
 <% if schedule != nil %>
   <ul class='appointments-list'>
     <% schedule.each do |appointment| %>
-      <li>
+      <li><a href="/appointments/<%= appointment.id %>">
         <%= appointment.mentor.full_name %>
         <%= appointment.start_time %>
-      </li>
+      </a></li>
     <% end %>
   </ul>
 <% end %>
