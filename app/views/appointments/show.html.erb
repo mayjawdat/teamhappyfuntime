@@ -15,5 +15,22 @@
     <% end %>
   <% end %>
 <% else %>
-  <p>This appointment has been booked by <%= User.find(@appointment.student_id).full_name %></p>
+  <p>This appointment has been booked by <%= User.find(@appointment.student_id).full_name %>.</p>
+  <% if @appointment.student_id == current_user.id %>
+    <%= form_for @appointment do |f| %>
+      <%= f.hidden_field :student_id, value: nil %>
+      <%= f.submit "Cancel Appointment" %>
+    <% end %>
+  <% end %>
 <% end %>
+
+
+<% if @appointment.mentor_id == current_user.id %>
+  <%= form_for @appointment do |f| %>
+    <%= f.hidden_field :cancelled, value: true %>
+    <%= f.submit "Cancel Appointment" %>
+  <% end %>
+<% end %>
+
+
+

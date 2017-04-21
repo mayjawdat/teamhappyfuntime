@@ -26,6 +26,8 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @appointment.update(student_id: appointment_params[:student_id])
 
+    @appointment.update(cancelled: true)
+
     if @appointment.save
       redirect_to current_user
     else
