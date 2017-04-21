@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :appointments, except: [:destroy]
 
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   root to: 'home#index'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
