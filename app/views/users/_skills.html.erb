@@ -1,0 +1,9 @@
+<h3> list of this mentor's skills </h3>
+
+<ul class='skills-list'>
+  <% @profile.skills.each do |skill| %>
+    <li>
+      <%= skill.subject %>
+    </li>
+  <% end %>
+</ul>
