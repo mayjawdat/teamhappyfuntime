@@ -2,7 +2,6 @@
 
 <% if @profile.is_mentor %>
   <%= render 'skills' %>
-  <%= link_to 'Create New Appointments Slot', new_appointment_path %>
 <% end %>
 
 <%= render 'my_appointments' if @profile.id == current_user.id %>

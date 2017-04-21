@@ -1,0 +1,6 @@
+Leave feedback for <%= User.find(@feedback_receiver).full_name %>
+
+<%= form_for @appointment do |f| %>
+  <%= f.text_area @feedback_target, value: @appointment[@feedback_target] %>
+  <%= f.submit %>
+<% end %>
