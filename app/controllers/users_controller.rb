@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     params[:mentor_skills].each do |skill_id|
       UsersSkill.create(skill_id: skill_id, user_id: current_user.id)
     end
+    redirect_to "/users/#{current_user.id}"
   end
 
   private
