@@ -24,6 +24,7 @@ class AppointmentsController < ApplicationController
 
   def update
     @appointment = Appointment.find(params[:id])
+    @appointment.update(student_id: appointment_params[:student_id])
 
     if @appointment.save
       redirect_to current_user
@@ -37,6 +38,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:start_time, :end_time)
+    params.require(:appointment).permit(:start_time, :end_time, :student_id)
   end
 end
