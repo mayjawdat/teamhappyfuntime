@@ -27,6 +27,7 @@ body {
 }
 
 .input{
+  color: #5B5941;
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -38,6 +39,7 @@ body {
   text-align: center;
 }
 a {
+  text-decoration: none;
   color: #5B5941;
 }
 
