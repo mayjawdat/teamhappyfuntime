@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     params[:mentor_skills].each do |skill_id|
-
+      UsersSkill.create(skill_id: skill_id, user_id: current_user.id)
     end
   end
 
