@@ -24,6 +24,13 @@ class AppointmentsController < ApplicationController
 
   def update
     @appointment = Appointment.find(params[:id])
+
+    if @appointment.save
+      redirect_to current_user
+    else
+      @errors = @appointment.errors.full_messages
+      render 'new'
+    end
   end
 
 
@@ -31,9 +38,5 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:start_time, :end_time)
-  end
-
-  def update_student_id
-
   end
 end
